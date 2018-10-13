@@ -1,0 +1,23 @@
+.navbar-start :hover {
+    border-bottom: 1px solid $primary;
+}
+
+.navbar-end :hover {
+    border-bottom: 1px solid $primary;
+}
+
+.navbar {
+    height: 4.5rem;
+}
+
+.navbar-item img {
+    max-height: 2.5rem;
+}
+
+.is-muted {
+    color: $grey-light !important;
+}
+
+a.is-muted:hover {
+    color: $grey !important;
+}

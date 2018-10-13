@@ -9,11 +9,19 @@
 // @import '~bootstrap/scss/bootstrap';
 
 // Font-awesome
-@import '~font-awesome/scss/font-awesome';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
 
 // bulma
 @import '~bulma/bulma';
 
 // Buefy
 @import '~buefy/src/scss/buefy';
+
+// Custom Sass Pages
+
+@import "overrides";
+
+@import "helpers";
+
+@import "styles";
 
