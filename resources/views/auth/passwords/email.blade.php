@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-content">
                     <h1 class="title">Forgot Password?</h1>
-                    <form action="route('password.email')" method="POST" role="form">
+                    <form action="{{ route('password.email') }}" method="POST" role="form">
                         {{csrf_field()}}
                         <div class="field">
                             <label for="email" class="label">Email Address</label>

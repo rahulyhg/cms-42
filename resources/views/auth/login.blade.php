@@ -7,12 +7,12 @@
                 <div class="card-content">
                     <h1 class="title">Log In</h1>
 
-                    <form action="route('login')" method="POST" role="form">
+                    <form action="{{route('login')}}" method="POST" role="form">
                         {{csrf_field()}}
                         <div class="field">
                             <label for="email" class="label">Email Address</label>
                             <p class="control has-icons-left">
-                                <input class="input {{$errors->has('email') ? is-danger : ''}}" type="text" id="email" name="email" placeholder="name@example.com" value="{{old('email')}}">
+                                <input class="input {{$errors->has('email') ? 'is-danger' : ''}}" type="text" id="email" name="email" placeholder="name@example.com" value="{{old('email')}}">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -24,7 +24,7 @@
                         <div class="field">
                             <label for="password" class="label">Password</label>
                             <p class="control has-icons-left">
-                                <input class="input {{$errors->has('password') ? is-danger : ''}}" type="password" id="password" name="password">
+                                <input class="input {{$errors->has('password') ? 'is-danger' : ''}}" type="password" id="password" name="password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -38,7 +38,7 @@
                     </form>
                 </div>
             </div>
-            <h5 class="has-text-centered m-t-20"><a href="{{ route('password.request')}} " class="is-muted">Forgot Password?</a></h5>
+            <h5 class="has-text-centered m-t-20"><a href="{{route('password.request')}} " class="is-muted">Forgot Password?</a></h5>
         </div>
     </div>
 @endsection

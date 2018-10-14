@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>CMS</title>
+    <title>CMS MANAGEMENT</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,6 +22,7 @@
 <body>
     <div id="app">
         @include('partials.client.nav')
+        @include('partials.manage.manage')
         <section class="section">
                 @yield('content')
         </section>

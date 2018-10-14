@@ -7,12 +7,12 @@
                 <div class="card-content">
                     <h1 class="title">Register</h1>
 
-                    <form action="route('register')" method="POST" role="form">
+                    <form action="{{route('register')}}" method="POST" role="form">
                         {{csrf_field()}}
                         <div class="field">
                             <label for="name" class="label">Name</label>
                             <p class="control has-icons-left">
-                                <input class="input {{$errors->has('name') ? is-danger : ''}}" type="text" id="name" name="name" placeholder="Your Name" value="{{old('name')}}" required>
+                                <input class="input {{$errors->has('name') ? 'is-danger' : ''}}" type="text" id="name" name="name" placeholder="Your Name" value="{{old('name')}}" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -24,7 +24,7 @@
                         <div class="field">
                             <label for="email" class="label">Email Address</label>
                             <p class="control has-icons-left">
-                                <input class="input {{$errors->has('email') ? is-danger : ''}}" type="text" id="email" name="email" placeholder="name@example.com" value="{{old('email')}}" required>
+                                <input class="input {{$errors->has('email') ? 'is-danger' : ''}}" type="text" id="email" name="email" placeholder="name@example.com" value="{{old('email')}}" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -38,7 +38,7 @@
                                 <div class="field">
                                     <label for="password" class="label">Password</label>
                                     <p class="control has-icons-left">
-                                        <input class="input {{$errors->has('password') ? is-danger : ''}}" type="password" id="password" name="password" required>
+                                        <input class="input {{$errors->has('password') ? 'is-danger' : ''}}" type="password" id="password" name="password" required>
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-lock"></i>
                                         </span>
@@ -52,7 +52,7 @@
                                 <div class="field">
                                     <label for="password_confirmation" class="label">Confirm Password</label>
                                     <p class="control has-icons-left">
-                                        <input class="input {{$errors->has('password_confirmation') ? is-danger : ''}}" type="password" id="password_confirmation" name="password_confirmation" required>
+                                        <input class="input {{$errors->has('password_confirmation') ? 'is-danger' : ''}}" type="password" id="password_confirmation" name="password_confirmation" required>
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-lock"></i>
                                         </span>
@@ -67,7 +67,7 @@
                     </form>
                 </div>
             </div>
-            <h5 class="has-text-centered m-t-20"><a href="{{ route('login')}} " class="is-muted">Already have an Account?</a></h5>
+            <h5 class="has-text-centered m-t-20"><a href="{{route('login')}}" class="is-muted">Already have an Account?</a></h5>
         </div>
     </div>
 @endsection
