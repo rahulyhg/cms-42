@@ -20,13 +20,15 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @include('partials.client.nav')
-        @include('partials.manage.manage')
-        <section class="section">
-                @yield('content')
-        </section>
+
+    @include('partials.client.nav')
+    @include('partials.manage.manage')
+
+    <div class="management-area" id="app">
+        @yield('content')
     </div>
-    <script src="{{ asset('js/all.js') }}"></script
+    <script src="{{ asset('js/all.js') }}"></script>
+    @yield('scripts')
+    
 </body>
 </html>

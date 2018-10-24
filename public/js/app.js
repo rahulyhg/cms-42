@@ -11967,7 +11967,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    auto_password: true,
+    password_options: 'keep'
+  }
 });
 
 /***/ }),
