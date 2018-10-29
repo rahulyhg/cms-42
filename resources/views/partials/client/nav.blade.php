@@ -11,7 +11,7 @@
     </div>
     <div class="navbar-menu" id="nav">
         <div class="navbar-start">
-            <a href="" class="navbar-item m-l-10">Learn</a>
+            <a href="" class="navbar-item m-l-40">Learn</a>
             <a href="" class="navbar-item">Share</a>
             <a href="" class="navbar-item">Discuss</a>
         </div>
@@ -21,7 +21,7 @@
                 <a href="{{route('register')}}" class="navbar-item">Join Community</a>
             @else
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">Hey</a>
+                    <a class="navbar-link">Hey {{Auth::user()->name}}</a>
                     <div class="navbar-dropdown is-right">
                         <a href="" class="navbar-item"><i class="fas fa-user m-r-5"></i>Profile</a>
                         <a href="" class="navbar-item"><i class="fas fa-bell m-r-5"></i>Notification</a>
