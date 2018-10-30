@@ -25,9 +25,9 @@
             </div>
 
             <div class="field" v-if="permissionType == 'basic'">
-                <label for="slug" class="label">Slug</label>
+                <label for="name" class="label">Slug</label>
                 <p class="control">
-                    <input type="text" class="input" name="slug" id="slug">
+                    <input type="text" class="input" name="name" id="name">
                 </p>
             </div>
 
@@ -90,4 +90,27 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        permissionType: 'basic',
+        resource: '',
+        crudSelected: ['create', 'read', 'update', 'delete']
+      },
+      methods: {
+        crudName: function(item) {
+          return item.substr(0,1).toUpperCase() + item.substr(1) + " " + app.resource.substr(0,1).toUpperCase() + app.resource.substr(1);
+        },
+        crudSlug: function(item) {
+          return item.toLowerCase() + "-" + app.resource.toLowerCase();
+        },
+        crudDescription: function(item) {
+          return "Allow a User to " + item.toUpperCase() + " a " + app.resource.substr(0,1).toUpperCase() + app.resource.substr(1);
+        }
+      }
+    });
+  </script>
 @endsection

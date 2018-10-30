@@ -11966,28 +11966,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-var app = new Vue({
-    el: '#app',
-    data: {
-        auto_password: true,
-        password_options: 'keep',
-        permissionType: 'basic',
-        resource: '',
-        crudSelected: ['create', 'read', 'update', 'delete']
-    },
-    methods: {
-        crudName: function crudName(item) {
-            return item.substr(0, 1).toUpperCase() + item.substr(1) + " " + app.resource.substr(0, 1).toUpperCase() + app.resource.substr(1);
-        },
-        crudSlug: function crudSlug(item) {
-            return item.toLowerCase() + "-" + app.resource.toLowerCase();
-        },
-        crudDescription: function crudDescription(item) {
-            return "Allow a User to " + item.toUpperCase() + " a " + app.resource.substr(0, 1).toUpperCase() + app.resource.substr(1);
-        }
-    }
-});
-
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

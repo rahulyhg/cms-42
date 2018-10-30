@@ -13,8 +13,8 @@
                 <div class="columns">
                     <div class="column">
                         <form action="{{route('users.update', $user->id)}}" method="POST">
-                        {{method_field('PUT')}}
-                        {{csrf_field()}}
+                        @csrf
+                        @method('PUT')
                             <div class="field">
                                 <label for="name" class="label">Name</label>
                                 <p class="control has-icons-left">
@@ -57,4 +57,16 @@
         </div>
 
     </div>
+@endsection
+@section('scripts')
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        password_options: 'keep'
+      }
+    });
+
+  </script>
 @endsection

@@ -43,14 +43,14 @@ class PermissionController extends Controller
         if ($request->permission_type == 'basic') 
         {
             $this->validate($request, [
-                'display' => 'required|max:255',
+                'display_name' => 'required|max:255',
                 'name' => 'required|max:255|alphadash|unique:permissions,name',
                 'description' => 'sometimes|max:255'
             ]);
 
             $permission = new Permission();
+            $permission->display_name = $request->input('display_name');            
             $permission->name = $request->input('name');
-            $permission->display_name = $request->input('display_name');
             $permission->description = $request->input('description');
             $permission->save();
 
@@ -66,12 +66,12 @@ class PermissionController extends Controller
                 $crud = explode(',', $request->crud_selected);
                 if (count($crud) > 0) {
                     foreach ($crud as $x) {
-                        $slug = strtolower($x) . '-' . strtolower($request->resource);
+                        $name = strtolower($x) . '-' . strtolower($request->resource);
                         $display_name = ucwords($x. " " . $request->resource);
                         $description = "Allows a user to " . strtoupper($x) . ' a ' . ucwords($request->resource);
 
                         $permission = new Permission();
-                        $permission->slug = $slug;
+                        $permission->name = $name;
                         $permission->display_name = $display_name;
                         $permission->description = $description;
                         $permission->save();
