@@ -10,11 +10,11 @@
 
         <div class="card">
             <div class="card-content">
-                <div class="columns">
-                    <div class="column">
-                        <form action="{{route('users.update', $user->id)}}" method="POST">
-                        @csrf
-                        @method('PUT')
+                <form action="{{route('users.update', $user->id)}}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="columns">
+                        <div class="column">
                             <div class="field">
                                 <label for="name" class="label">Name</label>
                                 <p class="control has-icons-left">
@@ -49,13 +49,23 @@
                                     </div>
                                 </b-radio-group>
                             </div>   
-                            <button class="button is-primary">Edit User</button>
-                        </form>
+                        </div>
+                        <div class="column">
+                            <label for="roles" class="label">Roles:</label>
+                            <input type="hidden" class="input" name="roles" :value="rolesSelected">
+                            @foreach ($roles as $role)
+                                <div class="field"><b-checkbox :native-value="{{$role->id}}" v-model="rolesSelected">{{$role->display_name}}</b-checkbox></div>
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                    <div class="columns">
+                        <div class="column">
+                            <button class="button is-primary">Edit User</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-
     </div>
 @endsection
 @section('scripts')
@@ -64,7 +74,8 @@
     var app = new Vue({
       el: '#app',
       data: {
-        password_options: 'keep'
+        password_options: 'keep',
+        rolesSelected: {!! $user->roles->pluck('id') !!}
       }
     });
 

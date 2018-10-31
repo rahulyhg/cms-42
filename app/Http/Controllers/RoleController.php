@@ -73,8 +73,8 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        //$role = Role::findOrFail($id)->with(permissions);
-        $role = Role::findOrFail($id);
+        $role = Role::findOrFail($id)->with('permissions')->first();
+        // $role = Role::findOrFail($id);
         return view('manage.roles.show')->withRole($role);
     }
 
