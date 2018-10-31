@@ -3,6 +3,11 @@
         <a href="{{ route('home') }}" class="navbar-item">
             <img src="{{ asset('images/exp.png') }}" alt="Logo">
         </a>
+
+        @if (Request::segment(1) == "manage")
+            <a class="navbar-item is-hidden-desktop" id="admin-slideout-button"><span class="icon"> <i class="fas fa-arrow-circle-right"></i></span></a>
+        @endif
+
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>

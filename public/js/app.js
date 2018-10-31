@@ -45040,7 +45040,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /* 43 */
 /***/ (function(module, exports) {
 
+var adminSlideoutButton = document.getElementById('admin-slideout-button');
+
 var accordions = document.getElementsByClassName('has-submenu');
+
+adminSlideoutButton.onclick = function () {
+    this.classList.toggle('is-active');
+    document.getElementById('admin-side-menu').classList.toggle('is-active');
+};
 
 for (var i = 0; i < accordions.length; i++) {
     if (accordions[i].classList.contains('is-active')) {
